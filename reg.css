@@ -1,0 +1,55 @@
+body {
+    font-family: 'Circular', sans-serif; /* Шрифт, аналогичный используемому в Spotify */
+    background-color: #1E1E1E; /* Цвет фона, аналогичный цвету фона Spotify */
+    color: #FFFFFF; /* Цвет текста */
+    background-image: url(img/metro.jpg);
+    background-size: auto;
+    background-position: center;
+  }
+  
+  .login-container {
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #000000; /* Цвет фона контейнера */
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  input[type="email"],
+  input[type="password"],
+  button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  input[type="email"],
+  input[type="password"] {
+    background-color: #282828; /* Цвет фона полей ввода */
+    color: #FFFFFF; /* Цвет текста в полях ввода */
+  }
+  
+  button {
+    background-color: #5adae0; /* Цвет кнопки "Log in" */
+    color: #FFFFFF; /* Цвет текста на кнопке */
+    cursor: pointer;
+  }
+  
+  a {
+    color: #FFFFFF; /* Цвет текста ссылок */
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
