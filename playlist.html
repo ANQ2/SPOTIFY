@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      font-size: 14px; /* уменьшаем размер шрифта */
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #282828;
+      border-radius: 10px;
+      box
+      0, 0, 0.1);
+      position: relative; /* Добавляем позиционирование для размещения изображения */
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px; /* Увеличиваем нижний отступ */
+    }
+
+    .playlist-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .playlist-item img {
+      width: 100px; /* Увеличиваем размер изображения */
+      height: 100px; /* Увеличиваем размер изображения */
+      object-fit: cover;
+      margin-right: 20px;
+      border-radius: 5px;
+    }
+
+    .playlist-item .song-details {
+      flex-grow: 1;
+    }
+
+    .song-title {
+      font-size: 1em; /* размер заголовка песни */
+      margin-bottom: 5px;
+    }
+
+    .artist-name {
+      font-size: 0.8em; /* размер имени артиста */
+      color: #999;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: transparent;
+      color: #fff;
+      border: none;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+
+    .playlist-image {
+      position: absolute;
+      top: -100px; /* Перемещаем изображение плейлиста выше */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 240px; /* Увеличиваем размер изображения */
+      height: 240px; /* Увеличиваем размер изображения */
+      border-radius: 10px; /* Добавляем закругление краев */
+      overflow: hidden;
+    }
+
+    .playlist-image img {
+      width: 50%;
+      height: 50%;
+      object-fit: cover;
+    }
+
+    /* Анимация для отображения воспроизведения аудио */
+    #audio-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      background-color: #1db954;
+      z-index: 999;
+      animation: audio-animation 1s infinite alternate;
+      display: none; /* По умолчанию анимация скрыта */
+    }
+
+    @keyframes audio-animation {
+      0% {
+        transform: scaleX(1);
+      }
+      100% {
+        transform: scaleX(2);
+      }
+    }
+
+    /* Стили для кнопок */
+    .control-button {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<button class="back-button" onclick="window.location.href = 'index.html';">&#8592;</button>
+
+<div class="container">
+  <div class="playlist-image">
+    <img src="" alt="Playlist Image">
+  </div>
+  <h1>My Playlist</h1>
+
+  <!-- Добавляем кнопки -->
+  <div>
+    <button class="control-button" onclick="playPause()">&#9654;</button>
+  </div>
+
+  <!-- Треки -->
+  <div class="playlist-item">
+    <img src="https://ticketon.kz/files/media/39602u54056_kayrat-nurtas-v-shymkente1.jpg" alt="Song 1">
+    <div class="song-details">
+      <div class="song-title">Алматы туны</div>
+      <div class="artist-name">Кайрат Нуртас</div>
+      <audio controls id="audio1">
+        <source src="song1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </div>
+
+  <div class="playlist-item">
+    <img src="https://ticketon.kz/files/media/39602u54056_kayrat-nurtas-v-shymkente1.jpg" alt="Song 2">
+    <div class="song-details">
+      <div class="song-title">Алматы туны</div>
+      <div class="artist-name">Кайрат Нуртас</div>
+      <audio controls id="audio2">
+        <source src="http://mmegabox.com/song/571016-dni-i-nochi/#" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </div>
+
+  <div class="playlist-item">
+    <img src="https://ticketon.kz/files/media/39602u54056_kayrat-nurtas-v-shymkente1.jpg" alt="Song 3">
+    <div class="song-details">
+      <div class="song-title">Алматы туны</div>
+      <div class="artist-name">Кайрат Нуртас</div>
+      <audio controls id="audio1">
+        <source src="song1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </div>
+
+  <div class="playlist-item">
+    <img src="https://ticketon.kz/files/media/39602u54056_kayrat-nurtas-v-shymkente1.jpg" alt="Song 4">
+    <div class="song-details">
+      <div class="song-title">Алматы туны</div>
+      <div class="artist-name">Кайрат Нуртас</div>
+      <audio controls id="audio2">
+        <source src="http://mmegabox.com/song/571016-dni-i-nochi/#" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </div>
+
+  <div class="playlist-item">
+    <img src="https://ticketon.kz/files/media/39602u54056_kayrat-nurtas-v-shymkente1.jpg" alt="Song 5">
+    <div class="song-details">
+      <div class="song-title">Алматы туны</div>
+      <div class="artist-name">Кайрат Нуртас</div>
+      <audio controls id="audio1">
+        <source src="song1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </div>
+
+  <div class="playlist-item">
+    <img src="https://ticketon.kz/files/media/39602u54056_kayrat-nurtas-v-shymkente1.jpg" alt="Song 6">
+    <div class="song-details">
+      <div class="song-title">Алматы туны</div>
+      <div class="artist-name">Кайрат Нуртас</div>
+      <audio controls id="audio2">
+        <source src="http://mmegabox.com/song/571016-dni-i-nochi/#" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </div>
+
+  <div class="playlist-item">
+    <img src="https://ticketon.kz/files/media/39602u54056_kayrat-nurtas-v-shymkente1.jpg" alt="Song 7">
+    <div class="song-details">
+      <div class="song-title">Алматы туны</div>
+      <div class="artist-name">Кайрат Нуртас</div>
+      <audio controls id="audio1">
+        <source src="song1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </div>
+
+  <div class="playlist-item">
+    <img src="https://ticketon.kz/files/media/39602u54056_kayrat-nurtas-v-shymkente1.jpg" alt="Song 8">
+    <div class="song-details">
+      <div class="song-title">Алматы туны</div>
+      <div class="artist-name">Кайрат Нуртас</div>
+      <audio controls id="audio2">
+        <source src="http://mmegabox.com/song/571016-dni-i-nochi/#" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </div>
+</div>
+
+<script>
+  var audioPlayer1 = document.getElementById('audio1');
+  var audioPlayer2 = document.getElementById('audio2');
+
+  function playPause() {
+    if (audioPlayer1.paused) {
+      audioPlayer1.play();
+    } else {
+      audioPlayer1.pause();
+    }
+  }
+</script>
+
+</body>
+</html>
