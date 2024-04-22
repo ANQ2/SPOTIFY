@@ -1,6 +1,5 @@
 package olen.olen.model;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 import javax.persistence.*;
 
 @Entity
@@ -22,6 +21,17 @@ public class User {
         this.email = email;
     }
 
+    // Геттер для поля password
+    public String getPassword() {
+        return password;
+    }
+
+    // Сеттер для поля password
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    // Остальные геттеры и сеттеры
     public Long getId() {
         return id;
     }
@@ -36,5 +46,13 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
